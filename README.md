@@ -4,7 +4,7 @@ Challenge
 Se crea una arquitectura MVC 
 En el directorio principal: com.ar.challenge se encuentra la Aplicación de inicio y una clase llamada Consumo.java que es la encargada de ejecutar la inserción a la BD de los registros consultados en la API https://cex.io/api/last_price/{symbol}/USD, cada 10seg. Para esto se utiliza la etiqueta @Scheduled
 
-En el directorio com.ar.challenge.config, se define el swagger  para facilitar las pruebas a través de la URL http://localhost:8080/swagger-ui.html#/
+En el directorio com.ar.challenge.config, se define el swagger  para facilitar las pruebas a través de la URL http://localhost:8080/swagger-ui.html#/ Siempre y cuando al correr la aplicacion se configure el servidor como localhost y el puerto 8080.
 
 Luego siguiendo la arquitectura MVC, contamos con 4 directorios 
 •	com.ar.challenge.controllers, se define los controladores para cumplir con los requerimientos
@@ -29,3 +29,5 @@ Cada 10seg se consume el WS https://cex.io/api/last_price/{symbol}/USD, tanto pa
 
 Para el manejo de la BD como mongo guarda las fechas en UTC, se define la properties zona.horaria=-3 donde dependiendo del país puedes definir el uso horario, para Argentina es -3. 
 
+  ***Importante***
+  Para correr los testUnitarios, tiene una bdMongo embebida por lo cual es necesario tener todos los servicios que esten levantados de Mongo, porque sino daran error.
